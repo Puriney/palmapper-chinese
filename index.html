@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+  <head>
+    <meta charset = "utf-8">
+      <title>PALMapper中文</title>
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <style>
+/*    .jumbotron-index{
+      padding-top: 100px;
+      
+    }*/
+    </style>
+  </head>
+  <body data-spy="scroll" data-target="#sidebar" data-offset="100">
+  <!-- <body data-spy="scroll" data-target="#mynav" data-offset="20"> -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/bootstrap-collapse.js"></script>
+    <script src="./js/bootstrap-affix.js"></script>
+
+    <nav  id="topbar" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="loading.html">PALMapper</a>
+        </div>
+
+         <div class="navbar-collapse collapse">
+          <ul  class="nav navbar-nav">
+            <li class="active"><a href="index.html">主页</a></li>
+            <li><a href="contact.html">关于我们</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">使用指南<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="proc1.html">指南1</a></li>
+                <li><a href="proc2.html">指南2</a></li>
+                <li><a href="proc3.html">指南3</a></li>
+                <li><a href="proc4.html">指南4</a></li>
+                <!-- <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li> -->
+              </ul>
+            </li>
+          </ul>
+          
+        </div>
+        
+      </div>
+    </nav>
+
+
+
+    <div class="container">
+      <div class="jumbotron">        
+          <h1>PALMapper</h1>
+          <p>快速、准确、识别结构变异</p>
+          <p><a href="http://ftp.raetschlab.org/software/palmapper/palmapper-0.5.tar.gz"><button class="btn btn-primary btn-md">点击下载</button></a></p>
+        </div>
+    </div>
+
+
+    
+    <div class="container">
+        <hr>
+        <!-- index侧边栏 -->
+        <div  id="sidebar" class="col-md-3" >
+          <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="380" data-offset-bottom="10" style="width:190px">
+            <li><a href="#news">动态</a></li>
+            <li><a href="#download">下载</a></li>
+            <li><a href="#cloud">云服务</a></li>
+            <li><a href="#requirements">依赖</a></li>
+            <li><a href="#install">安装</a></li>
+          </ul>
+          
+        </div>
+
+        <!-- index正文 -->
+        <div class="col-md-9" >
+
+          <section id="news">
+            <h1>动态</h1>
+            
+            <ul>
+            <li>2013/7/20 德国柏林 HiTSeq 2013 介绍PALMapper。<a href="http://www.raetschlab.org/suppl/palmapper/hitseq13slides.pdf">幻灯片下载</a></li>
+            <li>2013/7/09 PALMapper 0.5版本<strong>发布</strong></li>
+            </ul>
+          </section>
+
+          <section id="downlowd">
+            <h1>下载</h1>
+            
+            <p>最新版本：<a href="http://ftp.raetschlab.org/software/palmapper/palmapper-0.5.tar.gz">0.5版本下载</a></p>
+            
+            <p>若需要其他以往版本请<a href="http://ftp.raetschlab.org/software/palmapper">在此</a>获取源代码</p>
+          </section>
+
+          <section id="cloud">
+            <h1>云服务</h1>
+            
+            <p>我们搭建了Galaxy服务器以提供PALMapper云服务。请前往<a href="https://galaxy.cbio.mskcc.org">https://galaxy.cbio.mskcc.org</a>使用。同时本实验室其他程序也可以在此使用。</p>
+          </section>
+
+          <section id="requirements">
+            <h1>依赖</h1>
+            
+            <h2>硬件</h2>
+            
+            <p>装有Linux/UNIX 或者 Mac OS X操作系统的计算机</p>
+            
+            <h2>软件</h2>
+            
+            <h3>QPALMA</h3>
+            
+            <ul>
+            <li><a href="http://www.swig.org">SWIG</a></li>
+            <li><a href="http://www.python.org">Python</a>，2.5或者以上版本</li>
+            <li>C编译器，如GNU <a href="http://www.gnu.org">C编译器</a></li>
+            <li><a href="http:/numpy.scipy.org">Numpy</a>，Python科学计算包</li>
+            <li>PALMapper</li>
+            </ul>
+            
+            <h3>训练QPALMA</h3>
+            
+            <p>请使用以下其中一种优化工具包来训练QPALMA</p>
+            
+            <ul>
+            <li><a href="http://abel.ee.ucla.edu/cvxopt">CVXOPT</a>，免费软件</li>
+            <li><a href="http://www.mosek.com">MOSEK</a>，商业软件同时提供科研用途的免费版本</li>
+            </ul>
+            
+            <h3>PALMapper</h3>
+            
+            <ul>
+            <li>C++编译器</li>
+            <li>诸如<code>wget</code>、<code>make</code>等标准工具</li>
+            <li><a href="http://samtools.sourceforge.net/">SAMtools</a>用于处理SAM格式文件</li>
+            </ul>
+            
+            <h3>评估工具</h3>
+            
+            <ul>
+            <li><a href="http://www.python.org">Python</a>，2.5或者以上版本</li>
+            <li><a href="http:/numpy.scipy.org">Numpy</a>，Python科学计算包</li>
+            <li><a href="http://www.gnuplot.info">Gnuplot</a>，4.0或者以上版本</li>
+            <li><a href="http://biopython.org/">Biopython</a></li>
+            </ul>
+          </section>
+
+          <section id="install">
+            <h1>安装</h1>
+            
+            <p>详细文档请参考<a href="proc1.html">补充指南1</a></p>
+          </section>
+
+
+
+
+          
+        </div>
+        
+    </div>
+
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <hr>
+        <p class="text-muted credit">译者：<a href="http://github.com/puriney">严云</a></p>
+      </div>
+    </div> 
+
+
+
+  </body>
+</html>
+
