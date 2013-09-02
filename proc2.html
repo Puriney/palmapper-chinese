@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+  <head>
+    <meta charset = "utf-8">
+      <title>以命令行方式运行PALMapper</title>
+    <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.min.css"> -->
+    <style>
+/*    .jumbotron-index{
+      padding-top: 100px;
+      
+    }*/
+    </style>
+  </head>
+  <body data-spy="scroll" data-target="#sidebar" data-offset="100">
+  <!-- <body data-spy="scroll" data-target="#mynav" data-offset="20"> -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/bootstrap-collapse.js"></script>
+    <script src="./js/bootstrap-affix.js"></script>
+
+    <div  id="topbar" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="loading.html">PALMapper</a>
+        </div>
+
+         <div class="navbar-collapse">
+          <ul  class="nav navbar-nav">
+            <li class="active"><a href="index.html">主页</a></li>
+            <li><a href="contact.html">关于我们</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">使用指南<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="proc1.html">指南1</a></li>
+                <li><a href="proc2.html">指南2</a></li>
+                <li><a href="proc3.html">指南3</a></li>
+                <li><a href="proc4.html">指南4</a></li>
+                <!-- <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li> -->
+              </ul>
+            </li>
+          </ul>
+          
+        </div>
+        
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="jumbotron">        
+          <h1>PALMapper</h1>
+          <p>快速、准确、识别结构变异</p>
+          <p><a href="http://ftp.raetschlab.org/software/palmapper/palmapper-0.5.tar.gz"><button class="btn btn-primary btn-md">点击下载</button></a></p>
+        </div>
+    </div>
+
+
+    
+    <div class="container">
+        <hr>
+        <!-- index侧边栏 -->
+        <div  id="sidebar" class="col-md-3" >
+          <ul class="well nav nav-pills nav-stacked" data-spy="affix" data-offset-top="380" data-offset-bottom="10" style="width:190px">
+            <li><a href="#proc2overview">概要</a></li>
+            <li><a href="#proc2requirement">必需资源和文件</a></li>
+            <li><a href="#proc2run">运行PALMapper</a></li>
+          </ul>
+          
+        </div>
+
+        <!-- index正文 -->
+        <div class="col-md-9" >
+
+          <section id="proc2overview">
+            <h1>概要</h1>
+            
+            <p>基本指南2这里介绍了如何使用PALMapper工具进行剪切或者非剪切比对的过程。这里讲述命令行方式的操作。Galaxy云操作在可选指南2里。对于不熟悉存储或者安装事宜的用户我们推荐使用Galaxy。然而当使用PALMapper处理相对较大的基因组比如人类基因组时，现在版本的Galaxy无法提供足够空间保障PALMapper运行。若是这样我们还是推荐用户使用命令行（具体内存需要请看考补充指南1）</p>
+            
+            <p>本指南将会介绍在QPALMA已经被训练完毕（参考基本指南1）以及可变剪切位点已经被预测（参考补充指南2）的前提下如何使用PALMapper。最后本指南还会介绍包含在软件包里的测试案例，PALMapper是否得到期望结果。结果还可以用来测评（参考基本指南3）以及可视化（参考基本指南4）</p>
+            
+            <hr />
+          </section>
+          <section id="proc2requirement">
+            <h1>必需资源和文件</h1>
+            
+            <ul>
+            <li><p>硬件</p>
+            
+            <p>Linux／Unix或者Mac OS X操作系统的计算机</p></li>
+            <li><p>软件</p>
+            
+            <p>如果补充指南1已经完成，所有软件都必须安装</p></li>
+            <li><p>PALMapper需要以下文件</p>
+            
+            <ul><li>以FASTA格式记录的基因组序列</li>
+            <li>以Sanger FASTQ格式记录的序列数据</li>
+            <li>以GFF3格式记录的基因组注释信息</li>
+            <li><p>以SPF格式记录的5’ss和3’ss 剪切位点预测信息及其相应的二进制文件（可选）。该文件有两种获得方式：</p>
+            
+            <ol><li><p>参考补充指南2用户自行用mGene或者ASP来计算剪切位点预测结果</p></li>
+            <li><p>用户可以直接从ftp.tuebingen.mpg.de/pub/fml/raetsch-lab/predictions/ splice下载</p></li></ol></li>
+            <li><p>QPALMA参数。通过训练QPALMA获得该文件。注意该文件可以直接使用预计算好的文件，并且已经包含在了软件包内。</p></li></ul></li>
+            </ul>
+            
+            <hr />
+          </section>
+          <section id="proc2run">
+          <h1>运行PALMapper</h1>
+
+          <h2>1. 打开shell窗口进入PALMapper文件夹</h2>
+
+          <pre><code>∼$ cd palmapper/
+          </code></pre>
+
+          <h2>2. 构建基因组目录</h2>
+
+          <pre><code>∼/palmapper/$ ./pmindex -i &lt;genome file&gt; -s &lt;indexsize&gt; -v 
+          </code></pre>
+
+          <p>其中<code>&lt;index size&gt;</code>是在做目录时，种子的长度。 </p>
+
+          <h2>3. 运行PALMapper</h2>
+
+          <pre><code>∼/palmapper/$ ./palmapper -i &lt;genome file&gt; -q &lt;readfile&gt; \  
+          -S -qpalma &lt;qpalmaparamfile&gt; -acc &lt;accpredfile&gt;   -don &lt;donaccfile&gt; \
+          -o &lt;outmappedfile&gt; -u &lt;outunmappedfile&gt; 
+          </code></pre>
+
+          <p>该命令适用于基本的剪切比对（请用<code>-S</code>参数申明）或者非剪切比对操作。用户应该参考详细参数表格来获得最好的结果。 </p>
+          <!-- test -->
+          <!-- <div class="span-fixed-sidebar" role="main"> -->
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        Collapsible Group Item #1
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                        Collapsible Group Item #2
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                        Collapsible Group Item #3
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse">
+                    <div class="panel-body">
+             
+                    </div>
+                  </div>
+                </div>
+            </div>
+        <!-- </div> -->
+          <!-- test -->
+          <h2>4. 输出文件</h2>
+
+          <p>两个输出文件将会产生并且记录在<code>&lt;out mapped file&gt;</code>和<code>&lt;out unmapped file&gt;</code>文件中。一旦比对满足用户设定的要求则会记录在成功比对输出文件内；相比之下，没有任何比对结果的测序序列将会记录在比对失败文件内。其中<code>-u</code>参数是可选的。</p>
+
+          <h2>5. wiggle格式文件</h2>
+
+          <p>可选。把SAM格式输出文件转换为wiggle格式：</p>
+
+          <pre><code>∼/palmapper/$ cd tools/ ∼/palmapper/tools/$ python sam2wig.py \
+          --input=&lt;alignmentfile&gt; \
+          --ref_file=&lt;genome_file&gt; \
+          --output=&lt;wiggle_file&gt; --expName=&lt;exp_name&gt; \
+          </code></pre>
+
+          <p>其中<code>&lt;alignmentfile&gt;</code>是第4步得到的比对结果，<code>&lt;genome_file&gt;</code>是基因组序列文件，<code>&lt;wiggle_file&gt;</code>是输出的wiggle文件，<code>&lt;exp_name&gt;</code> 是用户为实验的命名（比如Experiment-SRX001871）。也可以直接使用-report-coverage-wig参数来声明直接生成wiggle文件。</p>
+        </section>
+ 
+        </div>
+        
+    </div>
+
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <hr>
+        <p class="text-muted credit">译者：<a href="http://github.com/puriney">严云</a></p>
+      </div>
+    </div> 
+
+
+
+  </body>
+</html>
+

@@ -7443,3 +7443,9 @@ input[type="color"]:focus,
 }
 /*custom fixed top navbar*/
 body { padding-top: 100px; }
+
+@media(min-width: 768px) and (max-width: 979px){
+  .affix{
+    position: static;
+  }
+}
