@@ -59,53 +59,59 @@
       </div> <!-- /row -->
 </div> <!-- /container full -->
 
-<!-- div class="container">
+<div class="container">
   
   	<hr>
   
   	<div class="row">
-        <div class="col-md-4">
-          <div class="panel panel-default">
-            <div class="panel-heading"><h3>Hello.</h3></div>
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-            Aliquam in felis sit amet augue.
-            </div>
-          </div>
-        </div>
-      	<div class="col-md-4">
-        	<div class="panel panel-default">
-            <div class="panel-heading"><h3>Hello.</h3></div>
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-            Aliquam in felis sit amet augue.
-            </div>
-          </div>
-        </div>
-      	<div class="col-md-4">
-        	<div class="panel panel-default">
-            <div class="panel-heading"><h3>Hello.</h3></div>
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. 
-            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis 
-            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. 
-            Aliquam in felis sit amet augue.
-            </div>
-          </div>
-        </div>
-    </div> -->
-  
-<!-- 	<div class="row">
         <div class="col-md-12">
-          <br>
-          <p class="pull-left"><a href="http://www.raetschlab.org/suppl/palmapper">英文主页</a> &nbsp; ©<a href="http://github.com/puriney">严云</a></p>
-        <br><br>
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>写在前面</h3></div>
+            <div class="panel-body">下一代测序技术兴起，开启了革命性基因组和转录组测序时代。在Sanger测序平台不需要太多花费，通过RNA测序技术就能换来海量有关转录组测序序列数据。这些产生的序列，相对较短，同时有一些会有测序错误。在使用这些序列去完成转录组重建或者基因结构识别的工作之前，有一项重要工作是能够实现跨内含子地把序列比对上。在这里，我们开发了PALMapper。它速度快、易使用，并且不论在进行剪切或者非剪切比对时，都能从容不迫地处理RNA测序产生的上百万条序列。PALMapper是一款快速序列比对软件GenomeMapper和一款剪切比对软件QPALMA的强强结合产物。其中QPALMA借助序列测序质量信息和剪切位点预测信息以提高比对的准确性。使用PALMapper包的方法多样，在Unix或者Mac OS X系统里可以当作命令行调用，也可以通过诸如Galaxy网络平台等实现云操作数据处理。
+            </div>
+          </div>
         </div>
-  </div> -->
+    </div>
+</div>
+
+<div class="container">
+  
+    <!-- <hr> -->
+  
+    <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>关于本指南</h3></div>
+            <div class="panel-body"><p>在使用PALMapper比对工具之前，用户需要获得QPALMA提供的参数。该参数的获得方式有以下两种：<br>
+
+<ul>
+  <li>参考 基本指南1 和 可选指南1，使用真实数据的子数据或者人工生成的序列作为训练集，直接训练QPALMA</li>
+  <li>直接使用事先已经训练提供的参数（已附在QPALMA发布包内）</li>
+</ul></p>
+
+<p>使用PALMapper做序列比对时请参考 基本指南2 和 可选指南2。</p><p>在实际操作时，都会利用通过预测可变剪切位点来提高比对准确度。因此我们也准备了 补充指南2作为教程，演示如何通过mGene或者ASP工具来实现剪切位点的预测。在通过基本指南1和可选指南1获得QPALMA的参数后，请参考基本指南2 和 可选指南2 来具体实现剪切或者非剪切比对。为了完善，在比对结束后，用户还可以参考 基本指南3 和 可选指南3 来对比对结果准确性测评，诸如比对错误分布等情况。最后，基本指南4 和 可选指南4 将专门介绍如何对结果可视化。在基本指南4中，我们将会选用领域里普遍常用的GBrowser演示如何把比对结果在基因组浏览器里展现出来。可选指南4则介绍如何使用Galaxy Trackster功能来实现比对结果的可视化。数据涵盖250000条长度为36nt的序列。该数据可以从NCBI借助SRA003622来下载。保持更新的网站将会维护在 <a href="http://www.fml.mpg.de/raetsch/suppl/palmapper/tutorial">http://www.fml.mpg.de/raetsch/suppl/palmapper/tutorial</a>。</p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>关于本翻译</h3></div>
+            <div class="panel-body">
+              一个好工具，希望更多人使用。
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
     <div id="footer">
       <div class="container">
-        <br>
+        <hr>
           <p class="pull-left"><a href="http://www.raetschlab.org/suppl/palmapper">英文主页</a> &nbsp; 译自：<a href="http://github.com/puriney">严云</a></p>
         <br><br>
       </div>
