@@ -6,7 +6,6 @@
     <meta charset = "utf-8">
       <title>PALMapper中文</title>
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.min.css"> -->
     <style>
 /*    .jumbotron-index{
       padding-top: 100px;
@@ -21,10 +20,10 @@
     <script src="./js/bootstrap-collapse.js"></script>
     <script src="./js/bootstrap-affix.js"></script>
 
-    <div  id="topbar" class="navbar navbar-default navbar-fixed-top">
+    <nav  id="topbar" class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -32,7 +31,7 @@
           <a class="navbar-brand" href="loading.html">PALMapper</a>
         </div>
 
-         <div class="navbar-collapse">
+         <div class="navbar-collapse collapse">
           <ul  class="nav navbar-nav">
             <li class="active"><a href="index.html">主页</a></li>
             <li><a href="contact.html">关于我们</a></li>
@@ -54,7 +53,7 @@
         </div>
         
       </div>
-    </div>
+    </nav>
 
 
 
@@ -72,7 +71,7 @@
         <hr>
         <!-- index侧边栏 -->
         <div  id="sidebar" class="col-md-3" >
-          <ul class="well nav nav-pills nav-stacked" data-spy="affix" data-offset-top="380" data-offset-bottom="10" style="width:190px">
+          <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="380" data-offset-bottom="10" style="width:190px">
             <li><a href="#news">动态</a></li>
             <li><a href="#download">下载</a></li>
             <li><a href="#cloud">云服务</a></li>
@@ -83,17 +82,18 @@
         </div>
 
         <!-- index正文 -->
-        <div id="content" class="col-md-9" >
+        <div class="col-md-9" >
 
           <section id="news">
             <h1>动态</h1>
             
             <ul>
+            <li>2013/9/02 <a href="proc2.html">基本指南2</a> 翻译完成并上传</li>
             <li>2013/7/20 德国柏林 HiTSeq 2013 介绍PALMapper。<a href="http://www.raetschlab.org/suppl/palmapper/hitseq13slides.pdf">幻灯片下载</a></li>
             <li>2013/7/09 PALMapper 0.5版本<strong>发布</strong></li>
             </ul>
           </section>
-          <hr />
+
           <section id="downlowd">
             <h1>下载</h1>
             
@@ -101,13 +101,12 @@
             
             <p>若需要其他以往版本请<a href="http://ftp.raetschlab.org/software/palmapper">在此</a>获取源代码</p>
           </section>
-          <hr />
+
           <section id="cloud">
             <h1>云服务</h1>
             
             <p>我们搭建了Galaxy服务器以提供PALMapper云服务。请前往<a href="https://galaxy.cbio.mskcc.org">https://galaxy.cbio.mskcc.org</a>使用。同时本实验室其他程序也可以在此使用。</p>
           </section>
-          <hr />
 
           <section id="requirements">
             <h1>依赖</h1>
@@ -153,15 +152,18 @@
             <li><a href="http://www.gnuplot.info">Gnuplot</a>，4.0或者以上版本</li>
             <li><a href="http://biopython.org/">Biopython</a></li>
             </ul>
-            
           </section>
-
 
           <section id="install">
             <h1>安装</h1>
             
             <p>详细文档请参考<a href="proc1.html">补充指南1</a></p>
           </section>
+
+
+
+
+          
         </div>
         
     </div>

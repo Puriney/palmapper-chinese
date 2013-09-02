@@ -6,6 +6,7 @@
     <meta charset = "utf-8">
       <title>以命令行方式运行PALMapper</title>
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.min.css"> -->
     <style>
 /*    .jumbotron-index{
@@ -34,13 +35,13 @@
 
          <div class="navbar-collapse">
           <ul  class="nav navbar-nav">
-            <li class="active"><a href="index.html">主页</a></li>
+            <li ><a href="index.html">主页</a></li>
             <li><a href="contact.html">关于我们</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">使用指南<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="proc1.html">指南1</a></li>
-                <li><a href="proc2.html">指南2</a></li>
+                <li class="active"><a href="proc2.html">指南2</a></li>
                 <li><a href="proc3.html">指南3</a></li>
                 <li><a href="proc4.html">指南4</a></li>
                 <!-- <li class="divider"></li>
@@ -139,54 +140,366 @@
           </code></pre>
 
           <p>该命令适用于基本的剪切比对（请用<code>-S</code>参数申明）或者非剪切比对操作。用户应该参考详细参数表格来获得最好的结果。 </p>
-          <!-- test -->
-          <!-- <div class="span-fixed-sidebar" role="main"> -->
+          <!-- table start -->
             <div class="panel-group" id="accordion">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                        Collapsible Group Item #1
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseOne" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                      <p></p>
-                    </div>
-                  </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                    非剪切比对参数表
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                  <table class="table table-hover">
+                  <!-- <table class="table"> -->
+
+                  <tr class="success">
+                  <td><b>参数</b></td>
+                  <td><b>描述</b></td>
+                  <td><b>默认值</b></td>
+                  <td><b>可选值</b></td>
+                  </tr>
+
+                  <tr>
+                  <td>-f</td>
+                  <td>输出格式</td>
+                  <td>SAM</td>
+                  <td>[SHORE, BED, BEDx, SAM]</td>
+                  </tr>
+                  <tr><td>-o</td>
+                  <td>输出文件名</td>
+                  <td>标准输出</td>
+                  <td>字符串</td>
+                  </tr>
+
+                  <tr class="success">
+                  <td><i>输出</i></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                          <tr>
+                  <td>-u</td>
+                  <td>无法比对测序序列文件名</td>
+                  <td>/dev/null</td>
+                  <td>字符串</td>
+                  </tr>
+                  <tr>
+                  <td>-rlim</td>
+                  <td>限定用于比对的测序序列数目</td>
+                  <td></td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-z</td>
+                  <td>只保留分数前排的比对结果</td>
+                  <td>10</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-a</td>
+                  <td>保留所有成功的比对结果</td>
+                  <td></td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>ar</td>
+                  <td>只保留有限的最好比对结果</td>
+                  <td>0（全部）</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr class="success">
+                  <td><i>比对方式</i></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                  <tr>
+                  <td>-r</td>
+                  <td>禁止逆向比对</td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                  <tr>
+                  <td>-h</td>
+                  <td>始终比对测序序列的全长（用于剪切比对）</td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                  <tr>
+                  <td>-d</td>
+                  <td>在最右端或者最左端允许比对间隙（剪切比对时忽略此参数）</td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                  <tr>
+                  <td>-w</td>
+                  <td>对于最优比对允许两个以上的比对间隙</td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+
+                  <tr class="success">
+                  <td><i>构建基因组目录</i></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+
+                  <tr>
+                  <td>-l</td>
+                  <td>最短匹配长度</td>
+                  <td>目录大小</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-threads</td>
+                  <td>最大线程数</td>
+                  <td>4</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-seed-hit-cancel-threshold</td>
+                  <td>导致seed被忽略时其匹配数目</td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                  <tr>
+                  <td>-index-precache</td>
+                  <td>线性序列目录文件</td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+
+                  <tr class="success">
+                  <td><i>序列削断</i></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+
+                  <tr>
+                  <td>-rtrim</td>
+                  <td>削断序列直到实现一次匹配</td>
+                  <td></td>
+                  <td>整数</td>
+                  </tr> 
+                  <tr>
+                  <td>-polytrim</td>
+                  <td>移除poly(A)尾巴直到实现一次匹配</td>
+                  <td></td>
+                  <td>整数</td>
+                  </tr>
+
+                  <tr class="success">
+                  <td><i>比对自定义</i></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+
+                  <tr>
+                  <td>-M</td>
+                  <td>最大不匹配个数</td>
+                  <td>自动</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-G</td>
+                  <td>最大比对间隙个数</td>
+                  <td>自动</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-E</td>
+                  <td>最大编辑操作</td>
+                  <td>自动</td>
+                  <td>整数</td>
+                  </tr>
+                  <tr>
+                  <td>-m</td>
+                  <td>不匹配罚分</td>
+                  <td>4</td>
+                  <td>8</td>
+                  </tr>
+                  <tr>
+                  <td>-g</td>
+                  <td>间隙罚分</td>
+                  <td>5</td>
+                  <td>10</td>
+                  </tr>
+                  <tr>
+                  <td>-v</td>
+                  <td>冗余</td>
+                  <td>默认</td>
+                  <td></td>
+                  </tr>
+                  </table>
                 </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                        Collapsible Group Item #2
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseTwo" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                        Collapsible Group Item #3
-                      </a>
-                    </h4>
-                  </div>
-                  <div id="collapseThree" class="panel-collapse collapse">
-                    <div class="panel-body">
-             
-                    </div>
-                  </div>
-                </div>
+              </div>
             </div>
-        <!-- </div> -->
-          <!-- test -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                    剪切比对参数表
+                  </a>
+                </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <table class="table table-hover">
+                      <tr class="success">
+                        <td><b>参数</b></td>
+                        <td><b>描述</b></td>
+                        <td><b>默认值</b></td>
+                        <td><b>种类</b></td>
+                      </tr>
+                      <tr>
+                        <td>-S</td>
+                        <td>使用剪切比对</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+
+                      <tr>
+                        <td>-qpalma</td>
+                        <td>QPALMA参数文件</td>
+                        <td></td>
+                        <td>字符串</td>
+                      </tr>
+
+                      <tr>
+                        <td>-acc</td>
+                        <td>3'ss剪切位点预测</td>
+                        <td></td>
+                        <td>字符串</td>
+                      </tr>
+
+                      <tr>
+                        <td>-don</td>
+                        <td>5'ss剪切位点预测</td>
+                        <td></td>
+                        <td>字符串</td>
+                      </tr>
+
+                      <tr>
+                        <td>-no-ss-pred</td>
+                        <td>表明没有剪切位点预测</td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+
+                      <tr>
+                        <td>-filter-splice-sites-top-perc</td>
+                        <td>如果最优比对出现在预测的剪切位点且超过该百分率则使用剪切比对</td>
+                        <td>0.01</td>
+                        <td>浮点数［0，1］</td>
+                      </tr>
+                      <tr>
+                        <td>-fiter-max-mismatch</td>
+                        <td>如果非剪切比对存在至少该数目的不匹配则发生剪切比对</td>
+                        <td>0</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-filter-max-gaps</td>
+                        <td>如果非剪切比对存在至少该数目的间隙则发生剪切比对</td>
+                        <td>0</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-C</td>
+                        <td>合并长度的最小值</td>
+                        <td>自动</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-L</td>
+                        <td>长匹配的长度最小值</td>
+                        <td>自动</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-K</td>
+                        <td>短匹配的长度最小值</td>
+                        <td>自动</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-I</td>
+                        <td>最长内含子长度</td>
+                        <td>自动</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-SA</td>
+                        <td>每一条测序序列剪切比对发生的最大次数</td>
+                        <td>10</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-EL</td>
+                        <td>剪切比对时片段长度最小值</td>
+                        <td>自动</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-NI</td>
+                        <td>剪切比对时内含子数目最大数目</td>
+                        <td>自动</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-QMM</td>
+                        <td>鉴定为剪切位点所需要的匹配个数</td>
+                        <td>5</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-qpalma-use-map-max-len</td>
+                        <td>对指定长度上下游延展的长度限制</td>
+                        <td>10000</td>
+                        <td>整数</td>
+                      </tr>
+                      <tr>
+                        <td>-report</td>
+                        <td>比对报告文档</td>
+                        <td></td>
+                        <td>字符串</td>
+                      </tr>
+                      <tr>
+                        <td>-report-splice-sites</td>
+                        <td>报告不低于阈值的可信剪切位点</td>
+                        <td></td>
+                        <td>浮点数</td>
+                      </tr>
+                      <tr>
+                        <td>-report-splice-sites-top-perc</td>
+                        <td>报告排名前排的可信可变剪切位点</td>
+                        <td></td>
+                        <td>浮点数［0，1］</td>
+                      </tr>
+                      <tr>
+                        <td>-report-coverage-wig</td>
+                        <td>用wiggle格式输出覆盖度文件</td>
+                        <td></td>
+                        <td>字符串</td>
+                      </tr>
+                      <tr>
+                        <td>-report-giff-init</td>
+                        <td>使用GFF注释文件来比对外显子（如果基因组注释信息已知）</td>
+                        <td></td>
+                        <td>字符串</td>
+                      </tr>
+                    </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- table end -->
           <h2>4. 输出文件</h2>
 
           <p>两个输出文件将会产生并且记录在<code>&lt;out mapped file&gt;</code>和<code>&lt;out unmapped file&gt;</code>文件中。一旦比对满足用户设定的要求则会记录在成功比对输出文件内；相比之下，没有任何比对结果的测序序列将会记录在比对失败文件内。其中<code>-u</code>参数是可选的。</p>
